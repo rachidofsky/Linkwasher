@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About - EmailCleaner</title>
+  <meta name="description" content="Learn about EmailCleaner, the privacy-focused tool for removing tracking parameters from URLs and emails." />
+  <style>
+    :root{
+      --bg:#0a0e1a;
+      --card:#0f1419;
+      --muted:#94a3b8;
+      --accent:#06b6d4;
+      --accent-light:#67e8f9;
+      --accent-dark:#0891b2;
+      --text:#f1f5f9;
+      --text-dim:#cbd5e1;
+      --glass:rgba(255,255,255,0.05);
+      --glass-border:rgba(255,255,255,0.1);
+      --success:#10b981;
+      --warning:#f59e0b;
+      --danger:#ef4444;
+    }
+    
+    /* Light Mode Theme */
+    [data-theme="light"]{
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --muted:#64748b;
+      --accent:#0891b2;
+      --accent-light:#0e7490;
+      --accent-dark:#164e63;
+      --text:#1e293b;
+      --text-dim:#475569;
+      --glass:rgba(0,0,0,0.05);
+      --glass-border:rgba(0,0,0,0.1);
+      --success:#059669;
+      --warning:#d97706;
+      --danger:#dc2626;
+    }
+    
+    [data-theme="light"] body{
+      background:radial-gradient(ellipse at top, #e2e8f0 0%, #f1f5f9 50%, #f8fafc 100%);
+    }
+    
+    [data-theme="light"] .navbar{
+      background:rgba(248,250,252,0.95);
+      border-bottom:1px solid rgba(0,0,0,0.1);
+    }
+    
+    *{box-sizing:border-box}
+    
+    html,body{height:100%;scroll-behavior:smooth}
+    
+    body{
+      font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background:radial-gradient(ellipse at top, #1e293b 0%, #0f172a 50%, #020617 100%);
+      background-attachment:fixed;
+      color:var(--text);
+      margin:0;
+      padding:120px 20px 40px 20px;
+      min-height:100vh;
+      line-height:1.6;
+    }
+    
+    /* Fixed Navigation Bar */
+    .navbar{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      background:rgba(15,20,25,0.95);
+      backdrop-filter:blur(20px);
+      border-bottom:1px solid rgba(255,255,255,0.1);
+      padding:16px 0;
+      z-index:1000;
+      transition:all 0.3s ease;
+      height:72px;
+      box-sizing:border-box;
+    }
+    
+    .nav-container{
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    
+    .nav-logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:inherit;
+    }
+    
+    .nav-logo-icon{
+      width:40px;
+      height:40px;
+      display:grid;
+      place-items:center;
+      border-radius:8px;
+      background:linear-gradient(135deg, var(--accent-light), var(--accent));
+      font-weight:800;
+      font-size:16px;
+      color:#0a0e1a;
+      transition:transform 0.3s ease;
+    }
+    
+    .nav-logo:hover .nav-logo-icon{
+      transform:scale(1.05);
+    }
+    
+    .nav-logo-text{
+      font-size:20px;
+      font-weight:700;
+      background:linear-gradient(135deg, var(--text), var(--accent-light));
+      background-clip:text;
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    
+    .nav-links{
+      display:flex;
+      gap:32px;
+      align-items:center;
+    }
+    
+    .nav-links a{
+      color:var(--text-dim);
+      text-decoration:none;
+      font-size:14px;
+      font-weight:500;
+      transition:all 0.3s ease;
+      padding:8px 0;
+      position:relative;
+    }
+    
+    .nav-links a:hover{
+      color:var(--accent-light);
+    }
+    
+    .nav-links a::after{
+      content:'';
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:0;
+      height:2px;
+      background:var(--accent);
+      transition:width 0.3s ease;
+    }
+    
+    .nav-links a:hover::after{
+      width:100%;
+    }
+    
+    .nav-links a.active{
+      color:var(--accent-light);
+    }
+    
+    .nav-links a.active::after{
+      width:100%;
+    }
+    
+    /* Dark Mode Toggle */
+    .theme-toggle{
+      background:none;
+      border:2px solid rgba(255,255,255,0.2);
+      color:var(--text-dim);
+      padding:8px 12px;
+      border-radius:8px;
+      cursor:pointer;
+      font-size:14px;
+      transition:all 0.3s ease;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      margin-left:16px;
+    }
+    
+    .theme-toggle:hover{
+      background:rgba(255,255,255,0.1);
+      border-color:var(--accent);
+      color:var(--accent-light);
+    }
+    
+    [data-theme="light"] .theme-toggle{
+      border-color:rgba(0,0,0,0.2);
+    }
+    
+    [data-theme="light"] .theme-toggle:hover{
+      background:rgba(0,0,0,0.1);
+      border-color:var(--accent);
+    }
+    
+    .container{
+      max-width:800px;
+      margin:0 auto;
+      animation:fadeInUp 0.6s ease-out;
+    }
+    
+    @keyframes fadeInUp{
+      from{opacity:0;transform:translateY(30px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+    
+    .hero{
+      text-align:center;
+      margin-bottom:48px;
+    }
+    
+    .hero h1{
+      font-size:48px;
+      font-weight:800;
+      margin:0 0 16px 0;
+      background:linear-gradient(135deg, var(--text), var(--accent-light));
+      background-clip:text;
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      letter-spacing:-0.02em;
+    }
+    
+    .hero p{
+      font-size:20px;
+      color:var(--text-dim);
+      margin:0;
+      max-width:600px;
+      margin:0 auto;
+    }
+    
+    .content{
+      background:linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      backdrop-filter:blur(20px);
+      padding:40px;
+      border-radius:20px;
+      border:1px solid var(--glass-border);
+      box-shadow:0 20px 40px rgba(0,0,0,0.4);
+      margin-bottom:32px;
+    }
+    
+    .content h2{
+      color:var(--accent-light);
+      font-size:28px;
+      font-weight:700;
+      margin:0 0 24px 0;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    
+    .content h3{
+      color:var(--text);
+      font-size:20px;
+      font-weight:600;
+      margin:32px 0 16px 0;
+    }
+    
+    .content p{
+      color:var(--text-dim);
+      font-size:16px;
+      margin:0 0 16px 0;
+    }
+    
+    .content ul{
+      color:var(--text-dim);
+      padding-left:20px;
+      margin:16px 0;
+    }
+    
+    .content li{
+      margin:8px 0;
+    }
+    
+    .content code{
+      background:rgba(0,0,0,0.3);
+      color:var(--accent-light);
+      padding:2px 6px;
+      border-radius:4px;
+      font-family:'JetBrains Mono', monospace;
+      font-size:14px;
+    }
+    
+    .features-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+      gap:24px;
+      margin:32px 0;
+    }
+    
+    .feature{
+      background:linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      border:1px solid rgba(255,255,255,0.1);
+      padding:24px;
+      border-radius:12px;
+      transition:transform 0.3s ease;
+    }
+    
+    .feature:hover{
+      transform:translateY(-2px);
+    }
+    
+    .feature h4{
+      color:var(--accent-light);
+      font-size:18px;
+      font-weight:600;
+      margin:0 0 12px 0;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    
+    .feature p{
+      color:var(--text-dim);
+      font-size:14px;
+      margin:0;
+    }
+    
+    .cta{
+      text-align:center;
+      padding:32px;
+      background:linear-gradient(135deg, rgba(6,182,212,0.1), rgba(103,232,249,0.05));
+      border:1px solid rgba(6,182,212,0.2);
+      border-radius:16px;
+      margin-top:32px;
+    }
+    
+    .cta h3{
+      color:var(--accent-light);
+      font-size:24px;
+      margin:0 0 16px 0;
+    }
+    
+    .cta p{
+      color:var(--text-dim);
+      margin:0 0 24px 0;
+    }
+    
+    .btn{
+      display:inline-block;
+      background:linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color:#0a0e1a;
+      text-decoration:none;
+      padding:12px 24px;
+      border-radius:12px;
+      font-weight:600;
+      transition:all 0.3s ease;
+      box-shadow:0 4px 12px rgba(6,182,212,0.3);
+    }
+    
+    .btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 8px 20px rgba(6,182,212,0.4);
+    }
+    
+    @media (max-width:768px){
+      body{padding:100px 16px 32px 16px}
+      .content{padding:24px}
+      .hero h1{font-size:36px}
+      .hero p{font-size:18px}
+      .content h2{font-size:24px}
+      .features-grid{grid-template-columns:1fr;gap:16px}
+      
+      .nav-container{padding:0 16px}
+      .nav-links{gap:20px}
+      .nav-links a{font-size:13px}
+      .nav-logo-text{font-size:18px}
+      .nav-logo-icon{width:36px;height:36px;font-size:14px}
+    }
+    
+    @media (max-width:480px){
+      .hero h1{font-size:28px}
+      .content{padding:20px}
+      .nav-logo-text{display:none}
+      .nav-links{gap:16px}
+      .theme-toggle{margin-left:8px;padding:6px 8px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Fixed Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">EC</div>
+        <div class="nav-logo-text">EmailCleaner</div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+        <button class="theme-toggle" id="themeToggle">
+          <span id="themeIcon">🌙</span>
+          <span id="themeText">Dark</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="hero">
+      <h1>About EmailCleaner</h1>
+      <p>Your privacy-focused solution for cleaning tracking parameters from URLs and emails.</p>
+    </div>
+
+    <div class="content">
+      <h2>🛡️ What is EmailCleaner?</h2>
+      <p>EmailCleaner is a simple, privacy-focused web tool that removes tracking parameters from URLs found in emails, social media posts, and other content. In today's digital world, almost every link you click contains tracking codes that monitor your behavior across the web.</p>
+      
+      <p>Our tool helps you regain control over your privacy by stripping these unnecessary parameters while preserving the original functionality of the links.</p>
+
+      <h3>🎯 The Problem We Solve</h3>
+      <p>Modern marketing and social media platforms inject tracking parameters into virtually every link:</p>
+      <ul>
+        <li><strong>Email Marketing:</strong> <code>utm_source</code>, <code>utm_medium</code>, <code>utm_campaign</code></li>
+        <li><strong>Google Ads:</strong> <code>gclid</code>, <code>yclid</code></li>
+        <li><strong>Facebook/Meta:</strong> <code>fbclid</code>, <code>igshid</code></li>
+        <li><strong>HubSpot:</strong> <code>_hsenc</code>, <code>_hsmi</code></li>
+        <li><strong>MailChimp:</strong> <code>mc_cid</code>, <code>mc_eid</code></li>
+      </ul>
+
+      <p>These parameters allow companies to track your clicks, build profiles about your interests, and follow you across websites. EmailCleaner removes these tracking codes while keeping the links functional.</p>
+    </div>
+
+    <div class="content">
+      <h2>✨ Key Features</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <h4>🔒 Privacy First</h4>
+          <p>All processing happens locally in your browser. No data is sent to our servers or third parties.</p>
+        </div>
+        <div class="feature">
+          <h4>⚡ Instant Results</h4>
+          <p>Paste any email content or URLs and get cleaned links immediately. No sign-ups or downloads required.</p>
+        </div>
+        <div class="feature">
+          <h4>🎯 Smart Detection</h4>
+          <p>Automatically finds URLs in plain text, HTML emails, and forwarded messages.</p>
+        </div>
+        <div class="feature">
+          <h4>📱 Works Everywhere</h4>
+          <p>Responsive design that works perfectly on desktop, tablet, and mobile devices.</p>
+        </div>
+        <div class="feature">
+          <h4>🧹 Comprehensive Cleaning</h4>
+          <p>Removes 15+ common tracking parameters from major platforms and marketing tools.</p>
+        </div>
+        <div class="feature">
+          <h4>📋 Easy Sharing</h4>
+          <p>One-click copying of cleaned URLs makes sharing privacy-friendly links effortless.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <h2>🛠️ How It Works</h2>
+      <p>EmailCleaner uses advanced pattern matching to identify and remove tracking parameters while preserving the essential parts of your URLs:</p>
+      
+      <h3>1. URL Detection</h3>
+      <p>Our tool scans your pasted content for URLs in multiple formats:</p>
+      <ul>
+        <li>Plain text URLs (https://example.com/...)</li>
+        <li>HTML link attributes (href="..." and src="...")</li>
+        <li>Email forwarding formats</li>
+      </ul>
+
+      <h3>2. Parameter Analysis</h3>
+      <p>We identify and remove known tracking parameters including:</p>
+      <ul>
+        <li>UTM parameters (utm_source, utm_medium, etc.)</li>
+        <li>Click tracking IDs (gclid, fbclid, etc.)</li>
+        <li>Email platform trackers (_hsenc, mc_cid, etc.)</li>
+        <li>Social media trackers (igshid, si, etc.)</li>
+      </ul>
+
+      <h3>3. Clean Output</h3>
+      <p>You get the same functional URLs without the privacy-invasive tracking codes.</p>
+    </div>
+
+    <div class="content">
+      <h2>🌟 Why Choose EmailCleaner?</h2>
+      
+      <h3>Complete Privacy</h3>
+      <p>Unlike browser extensions or VPN services, EmailCleaner runs entirely in your browser. Your data never leaves your device, ensuring complete privacy and security.</p>
+
+      <h3>No Installation Required</h3>
+      <p>Simply visit our website and start cleaning links immediately. No downloads, no browser extensions, no account creation required.</p>
+
+      <h3>Free and Open</h3>
+      <p>EmailCleaner is completely free to use. We believe privacy tools should be accessible to everyone.</p>
+
+      <h3>Regular Updates</h3>
+      <p>We continuously update our tracking parameter database to stay ahead of new tracking methods used by marketing platforms.</p>
+    </div>
+
+    <div class="cta">
+      <h3>Ready to Clean Your Links?</h3>
+      <p>Start protecting your privacy today with EmailCleaner's simple, effective URL cleaning tool.</p>
+      <a href="index.html" class="btn">Try EmailCleaner Now</a>
+    </div>
+  </div>
+
+<script>
+  // Dark Mode Toggle
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = document.getElementById('themeIcon');
+  const themeText = document.getElementById('themeText');
+  const html = document.documentElement;
+
+  // Check for saved theme preference or default to dark
+  const currentTheme = localStorage.getItem('theme') || 'dark';
+  html.setAttribute('data-theme', currentTheme);
+  updateThemeButton(currentTheme);
+
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeButton(newTheme);
+  });
+
+  function updateThemeButton(theme) {
+    if (theme === 'light') {
+      themeIcon.textContent = '☀️';
+      themeText.textContent = 'Light';
+    } else {
+      themeIcon.textContent = '🌙';
+      themeText.textContent = 'Dark';
+    }
+  }
+</script>
+</body>
+</html>
