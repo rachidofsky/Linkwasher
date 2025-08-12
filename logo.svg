@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250">
+  <!-- Black circular badge background -->
+  <circle cx="125" cy="125" r="100" fill="#000000"/>
+  
+  <!-- Decorative scalloped edge -->
+  <g fill="#000000">
+    <circle cx="125" cy="25" r="12"/>
+    <circle cx="155" cy="30" r="10"/>
+    <circle cx="182" cy="45" r="10"/>
+    <circle cx="202" cy="68" r="10"/>
+    <circle cx="215" cy="95" r="10"/>
+    <circle cx="220" cy="125" r="12"/>
+    <circle cx="215" cy="155" r="10"/>
+    <circle cx="202" cy="182" r="10"/>
+    <circle cx="182" cy="205" r="10"/>
+    <circle cx="155" cy="220" r="10"/>
+    <circle cx="125" cy="225" r="12"/>
+    <circle cx="95" cy="220" r="10"/>
+    <circle cx="68" cy="205" r="10"/>
+    <circle cx="48" cy="182" r="10"/>
+    <circle cx="35" cy="155" r="10"/>
+    <circle cx="30" cy="125" r="12"/>
+    <circle cx="35" cy="95" r="10"/>
+    <circle cx="48" cy="68" r="10"/>
+    <circle cx="68" cy="45" r="10"/>
+    <circle cx="95" cy="30" r="10"/>
+  </g>
+  
+  <!-- White shield -->
+  <path d="M125 50 L95 70 L95 150 Q95 180 125 200 Q155 180 155 150 L155 70 Z" fill="#ffffff"/>
+  
+  <!-- Black shield detail -->
+  <path d="M125 60 L105 75 L105 145 Q105 165 125 180 L125 60 Z" fill="#000000"/>
+  
+  <!-- NoSpyLinks text -->
+  <text x="270" y="105" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#4A90A4">NoSpyLinks</text>
+  
+  <!-- Remove SpyLinks tagline -->
+  <text x="345" y="140" font-family="Arial, sans-serif" font-size="20" fill="#888888">Remove SpyLinks</text>
+</svg>
