@@ -6,8 +6,8 @@
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-  <title>About - NoSpyLinks</title>
-  <meta name="description" content="Learn about NoSpyLinks, the privacy-focused tool for removing tracking parameters from URLs and emails." />
+  <title>Privacy Policy - NoSpyLinks</title>
+  <meta name="description" content="NoSpyLinks Privacy Policy - Learn how we protect your privacy and handle your data." />
   <style>
     :root{
       --bg:#0a0e1a;
@@ -49,6 +49,15 @@
     [data-theme="light"] .navbar{
       background:rgba(248,250,252,0.95);
       border-bottom:1px solid rgba(0,0,0,0.1);
+    }
+    
+    [data-theme="light"] .site-footer{
+      background:linear-gradient(135deg, rgba(248,250,252,0.95), rgba(241,245,249,0.98));
+      border-top:1px solid rgba(0,0,0,0.1);
+    }
+    
+    [data-theme="light"] .footer-bottom{
+      border-top:1px solid rgba(0,0,0,0.1);
     }
     
     *{box-sizing:border-box}
@@ -151,14 +160,6 @@
     }
     
     .nav-links a:hover::after{
-      width:100%;
-    }
-    
-    .nav-links a.active{
-      color:var(--accent-light);
-    }
-    
-    .nav-links a.active::after{
       width:100%;
     }
     
@@ -271,71 +272,11 @@
       margin:8px 0;
     }
     
-    .content code{
-      background:rgba(0,0,0,0.3);
-      color:var(--accent-light);
-      padding:2px 6px;
-      border-radius:4px;
-      font-family:'JetBrains Mono', monospace;
-      font-size:14px;
+    .content strong{
+      color:var(--text);
     }
     
-    .features-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
-      gap:24px;
-      margin:32px 0;
-    }
-    
-    .feature{
-      background:linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
-      border:1px solid rgba(255,255,255,0.1);
-      padding:24px;
-      border-radius:12px;
-      transition:transform 0.3s ease;
-    }
-    
-    .feature:hover{
-      transform:translateY(-2px);
-    }
-    
-    .feature h4{
-      color:var(--accent-light);
-      font-size:18px;
-      font-weight:600;
-      margin:0 0 12px 0;
-      display:flex;
-      align-items:center;
-      gap:8px;
-    }
-    
-    .feature p{
-      color:var(--text-dim);
-      font-size:14px;
-      margin:0;
-    }
-    
-    .cta{
-      text-align:center;
-      padding:32px;
-      background:linear-gradient(135deg, rgba(6,182,212,0.1), rgba(103,232,249,0.05));
-      border:1px solid rgba(6,182,212,0.2);
-      border-radius:16px;
-      margin-top:32px;
-    }
-    
-    .cta h3{
-      color:var(--accent-light);
-      font-size:24px;
-      margin:0 0 16px 0;
-    }
-    
-    .cta p{
-      color:var(--text-dim);
-      margin:0 0 24px 0;
-    }
-    
-    .btn{
+    .back-link{
       display:inline-block;
       background:linear-gradient(135deg, var(--accent), var(--accent-dark));
       color:#0a0e1a;
@@ -345,36 +286,12 @@
       font-weight:600;
       transition:all 0.3s ease;
       box-shadow:0 4px 12px rgba(6,182,212,0.3);
+      margin-top:32px;
     }
     
-    .btn:hover{
+    .back-link:hover{
       transform:translateY(-2px);
       box-shadow:0 8px 20px rgba(6,182,212,0.4);
-    }
-    
-    @media (max-width:768px){
-      body{padding:100px 16px 32px 16px}
-      .content{padding:24px}
-      .hero h1{font-size:36px}
-      .hero p{font-size:18px}
-      .content h2{font-size:24px}
-      .features-grid{grid-template-columns:1fr;gap:16px}
-      
-      .nav-container{padding:0 16px}
-      .nav-links{gap:20px}
-      .nav-links a{font-size:13px}
-      .nav-logo-button{font-size:18px;padding:8px 16px}
-    }
-    
-    @media (max-width:480px){
-      .hero h1{font-size:28px}
-      .content{padding:20px}
-      .nav-logo-button{font-size:16px;padding:8px 14px}
-      .nav-links{gap:16px}
-      .theme-toggle{margin-left:8px;padding:6px 8px}
-      
-      .footer-content{grid-template-columns:1fr;gap:24px}
-      .footer-section h3, .footer-section h4{font-size:16px}
     }
     
     /* Footer Styles */
@@ -383,8 +300,6 @@
       border-top:1px solid rgba(255,255,255,0.1);
       padding:40px 0 20px 0;
       margin-top:60px;
-      width:100%;
-      clear:both;
     }
     
     .footer-container{
@@ -454,13 +369,31 @@
       margin:0;
     }
     
-    [data-theme="light"] .site-footer{
-      background:linear-gradient(135deg, rgba(248,250,252,0.95), rgba(241,245,249,0.98));
-      border-top:1px solid rgba(0,0,0,0.1);
+    @media (max-width:768px){
+      body{padding:100px 16px 32px 16px}
+      .content{padding:24px}
+      .hero h1{font-size:36px}
+      .hero p{font-size:18px}
+      .content h2{font-size:24px}
+      
+      .nav-container{padding:0 16px}
+      .nav-links{gap:20px}
+      .nav-links a{font-size:13px}
+      .nav-logo-button{font-size:18px;padding:8px 16px}
+      .theme-toggle{padding:6px 10px;font-size:12px;margin-left:12px}
+      
+      .footer-content{grid-template-columns:1fr;gap:24px}
     }
     
-    [data-theme="light"] .footer-bottom{
-      border-top:1px solid rgba(0,0,0,0.1);
+    @media (max-width:480px){
+      .hero h1{font-size:28px}
+      .content{padding:20px}
+      .nav-logo-button{font-size:16px;padding:8px 14px}
+      .nav-links{gap:16px}
+      .theme-toggle{margin-left:8px;padding:6px 8px}
+      
+      .footer-content{grid-template-columns:1fr;gap:24px}
+      .footer-section h3, .footer-section h4{font-size:16px}
     }
   </style>
 </head>
@@ -473,7 +406,7 @@
       </a>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="about.html" class="active">About</a>
+        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
         <button class="theme-toggle" id="themeToggle">
           <span id="themeIcon">🌙</span>
@@ -485,106 +418,131 @@
 
   <div class="container">
     <div class="hero">
-      <h1>About NoSpyLinks</h1>
-      <p>Your privacy-focused solution for cleaning tracking parameters from URLs and emails.</p>
+      <h1>Privacy Policy</h1>
+      <p>Your privacy is our priority. Learn how NoSpyLinks protects your data.</p>
     </div>
 
     <div class="content">
-      <h2>🛡️ What is NoSpyLinks?</h2>
-      <p>NoSpyLinks is a simple, privacy-focused web tool that removes tracking parameters from URLs found in emails, social media posts, and other content. In today's digital world, almost every link you click contains tracking codes that monitor your behavior across the web.</p>
+      <h2>🔒 Privacy Policy</h2>
+      <p><strong>Last Updated:</strong> August 13, 2025</p>
       
-      <p>Our tool helps you regain control over your privacy by stripping these unnecessary parameters while preserving the original functionality of the links.</p>
-
-      <h3>🎯 The Problem We Solve</h3>
-      <p>Modern marketing and social media platforms inject tracking parameters into virtually every link:</p>
+      <h3>1. Information We Collect</h3>
+      <p><strong>We collect minimal information:</strong></p>
       <ul>
-        <li><strong>Email Marketing:</strong> <code>utm_source</code>, <code>utm_medium</code>, <code>utm_campaign</code></li>
-        <li><strong>Google Ads:</strong> <code>gclid</code>, <code>yclid</code></li>
-        <li><strong>Facebook/Meta:</strong> <code>fbclid</code>, <code>igshid</code></li>
-        <li><strong>HubSpot:</strong> <code>_hsenc</code>, <code>_hsmi</code></li>
-        <li><strong>MailChimp:</strong> <code>mc_cid</code>, <code>mc_eid</code></li>
+        <li><strong>No Personal Data Processing:</strong> NoSpyLinks processes all URLs locally in your browser. We never receive, store, or process your URLs or email content on our servers.</li>
+        <li><strong>Basic Analytics:</strong> We may collect anonymous usage statistics such as page views and general geographic location (country level) to improve our service.</li>
+        <li><strong>Contact Information:</strong> When you contact us via email, we store your email address and message content solely for the purpose of responding to your inquiry.</li>
       </ul>
 
-      <p>These parameters allow companies to track your clicks, build profiles about your interests, and follow you across websites. NoSpyLinks removes these tracking codes while keeping the links functional.</p>
-    </div>
-
-    <div class="content">
-      <h2>✨ Key Features</h2>
-      <div class="features-grid">
-        <div class="feature">
-          <h4>🔒 Privacy First</h4>
-          <p>All processing happens locally in your browser. No data is sent to our servers or third parties.</p>
-        </div>
-        <div class="feature">
-          <h4>⚡ Instant Results</h4>
-          <p>Paste any email content or URLs and get cleaned links immediately. No sign-ups or downloads required.</p>
-        </div>
-        <div class="feature">
-          <h4>🎯 Smart Detection</h4>
-          <p>Automatically finds URLs in plain text, HTML emails, and forwarded messages.</p>
-        </div>
-        <div class="feature">
-          <h4>📱 Works Everywhere</h4>
-          <p>Responsive design that works perfectly on desktop, tablet, and mobile devices.</p>
-        </div>
-        <div class="feature">
-          <h4>🧹 Comprehensive Cleaning</h4>
-          <p>Removes 15+ common tracking parameters from major platforms and marketing tools.</p>
-        </div>
-        <div class="feature">
-          <h4>📋 Easy Sharing</h4>
-          <p>One-click copying of cleaned URLs makes sharing privacy-friendly links effortless.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="content">
-      <h2>🛠️ How It Works</h2>
-      <p>NoSpyLinks uses advanced pattern matching to identify and remove tracking parameters while preserving the essential parts of your URLs:</p>
-      
-      <h3>1. URL Detection</h3>
-      <p>Our tool scans your pasted content for URLs in multiple formats:</p>
+      <h3>2. How We Use Your Information</h3>
+      <p>Any information we collect is used exclusively to:</p>
       <ul>
-        <li>Plain text URLs (https://example.com/...)</li>
-        <li>HTML link attributes (href="..." and src="...")</li>
-        <li>Email forwarding formats</li>
+        <li>Respond to your support requests and inquiries</li>
+        <li>Improve our website and services based on anonymous usage patterns</li>
+        <li>Send important service updates (only if you've contacted us previously)</li>
       </ul>
 
-      <h3>2. Parameter Analysis</h3>
-      <p>We identify and remove known tracking parameters including:</p>
+      <h3>3. Data Processing and Storage</h3>
+      <p><strong>Local Processing:</strong> All URL cleaning and processing happens entirely in your web browser. Your data never leaves your device when using our core service.</p>
+      <p><strong>No Third-Party Tracking:</strong> We do not use third-party tracking scripts, social media pixels, or advertising networks that could compromise your privacy.</p>
+      <p><strong>Secure Communications:</strong> All communications with our servers use HTTPS encryption.</p>
+
+      <h3>4. Cookies and Local Storage</h3>
+      <p>NoSpyLinks uses minimal local storage:</p>
       <ul>
-        <li>UTM parameters (utm_source, utm_medium, etc.)</li>
-        <li>Click tracking IDs (gclid, fbclid, etc.)</li>
-        <li>Email platform trackers (_hsenc, mc_cid, etc.)</li>
-        <li>Social media trackers (igshid, si, etc.)</li>
+        <li><strong>Theme Preference:</strong> We store your dark/light mode preference in your browser's local storage</li>
+        <li><strong>No Tracking Cookies:</strong> We do not use cookies for tracking or advertising purposes</li>
+        <li><strong>Essential Functionality:</strong> Any storage is purely for improving your user experience</li>
       </ul>
 
-      <h3>3. Clean Output</h3>
-      <p>You get the same functional URLs without the privacy-invasive tracking codes.</p>
-    </div>
+      <h3>5. Third-Party Services</h3>
+      <p>NoSpyLinks is designed to minimize third-party dependencies:</p>
+      <ul>
+        <li><strong>Hosting:</strong> Our website is hosted on secure, privacy-respecting infrastructure</li>
+        <li><strong>Email:</strong> Contact form submissions are processed through our secure email system</li>
+        <li><strong>No Analytics Tracking:</strong> We do not use Google Analytics or similar tracking services</li>
+      </ul>
 
-    <div class="content">
-      <h2>🌟 Why Choose NoSpyLinks?</h2>
-      
-      <h3>Complete Privacy</h3>
-      <p>Unlike browser extensions or VPN services, NoSpyLinks runs entirely in your browser. Your data never leaves your device, ensuring complete privacy and security.</p>
+      <h3>6. Your Rights</h3>
+      <p>You have the right to:</p>
+      <ul>
+        <li><strong>Access:</strong> Request information about any data we have about you</li>
+        <li><strong>Deletion:</strong> Request deletion of your contact information from our records</li>
+        <li><strong>Correction:</strong> Request correction of any inaccurate information</li>
+        <li><strong>Portability:</strong> Request a copy of your data in a portable format</li>
+      </ul>
 
-      <h3>No Installation Required</h3>
-      <p>Simply visit our website and start cleaning links immediately. No downloads, no browser extensions, no account creation required.</p>
+      <h3>7. Data Retention</h3>
+      <ul>
+        <li><strong>Contact Information:</strong> We retain contact information for 2 years after your last communication with us</li>
+        <li><strong>Usage Data:</strong> Anonymous usage statistics are retained for 1 year for service improvement purposes</li>
+        <li><strong>User-Requested Deletion:</strong> We will delete your information within 30 days of a verified deletion request</li>
+      </ul>
 
-      <h3>Free and Open</h3>
-      <p>NoSpyLinks is completely free to use. We believe privacy tools should be accessible to everyone.</p>
+      <h3>8. Security Measures</h3>
+      <p>We implement appropriate security measures including:</p>
+      <ul>
+        <li>HTTPS encryption for all communications</li>
+        <li>Secure server infrastructure with regular security updates</li>
+        <li>Limited access to any stored data</li>
+        <li>Regular security audits and monitoring</li>
+      </ul>
 
-      <h3>Regular Updates</h3>
-      <p>We continuously update our tracking parameter database to stay ahead of new tracking methods used by marketing platforms.</p>
-    </div>
+      <h3>9. Children's Privacy</h3>
+      <p>NoSpyLinks does not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided personal information, please contact us and we will delete such information.</p>
 
-    <div class="cta">
-      <h3>Ready to Clean Your Links?</h3>
-      <p>Start protecting your privacy today with NoSpyLinks's simple, effective URL cleaning tool.</p>
-      <a href="index.html" class="btn">Try NoSpyLinks Now</a>
+      <h3>10. International Users</h3>
+      <p>NoSpyLinks is available globally. If you are using our service from outside the United States, please note that any information you provide may be transferred to and processed in the United States, where our servers are located.</p>
+
+      <h3>11. Changes to This Policy</h3>
+      <p>We may update this Privacy Policy occasionally. When we do:</p>
+      <ul>
+        <li>We will update the "Last Updated" date at the top of this policy</li>
+        <li>For significant changes, we will provide notice on our website</li>
+        <li>Your continued use of NoSpyLinks after changes constitutes acceptance of the updated policy</li>
+      </ul>
+
+      <h3>12. Contact Us</h3>
+      <p>If you have questions about this Privacy Policy or our privacy practices, please contact us:</p>
+      <ul>
+        <li><strong>Email:</strong> support@nospylinks.com</li>
+        <li><strong>Subject:</strong> Privacy Policy Question</li>
+      </ul>
+
+      <p><strong>Commitment to Privacy:</strong> NoSpyLinks was created with privacy as a core principle. We believe in protecting your digital privacy and will continue to operate with transparency and minimal data collection.</p>
+
+      <a href="#" onclick="history.back(); return false;" class="back-link">← Back to Previous Page</a>
     </div>
   </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>NoSpyLinks</h3>
+          <p>Privacy-focused URL cleaning tool. Remove tracking parameters and protect your privacy online.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 NoSpyLinks. All rights reserved. | Made with privacy in mind.</p>
+      </div>
+    </div>
+  </footer>
 
 <script>
   // Dark Mode Toggle
@@ -617,35 +575,5 @@
     }
   }
 </script>
-
-<!-- Footer -->
-<footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>NoSpyLinks</h3>
-        <p>Privacy-focused URL cleaning tool. Remove tracking parameters and protect your privacy online.</p>
-      </div>
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="privacy-policy.html">Privacy Policy</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 NoSpyLinks. All rights reserved. | Made with privacy in mind.</p>
-    </div>
-  </div>
-</footer>
-
 </body>
 </html>

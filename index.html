@@ -3,6 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
   <title>NoSpyLinks — Strip tracking from links</title>
   <meta name="description" content="Paste an email or URL and remove common tracking parameters (utm_*, gclid, fbclid, etc.). All processing happens locally in your browser." />
   <style>
@@ -81,9 +84,8 @@
       margin:0;
       padding:140px 20px 20px 20px;
       min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      display:block;
+      line-height:1.6;
     }
     
     /* Fixed Navigation Bar */
@@ -121,10 +123,10 @@
     .nav-logo-button{
       background:linear-gradient(135deg, var(--accent-light), var(--accent));
       color:#0a0e1a;
-      padding:8px 16px;
+      padding:10px 20px;
       border-radius:8px;
       font-weight:700;
-      font-size:18px;
+      font-size:20px;
       transition:all 0.3s ease;
       box-shadow:0 2px 8px rgba(6,182,212,0.3);
       border:none;
@@ -222,6 +224,7 @@
       max-width:1000px;
       animation:fadeInUp 0.6s ease-out;
       position:relative;
+      margin:0 auto;
     }
     
     /* Sidebar Ad Containers */
@@ -555,7 +558,7 @@
       .nav-container{padding:0 16px}
       .nav-links{gap:20px}
       .nav-links a{font-size:13px}
-      .nav-logo-button{font-size:16px;padding:6px 12px}
+      .nav-logo-button{font-size:18px;padding:8px 16px}
       .theme-toggle{padding:6px 10px;font-size:12px;margin-left:12px}
     }
     
@@ -568,9 +571,98 @@
       
       .nav-links{gap:16px}
       .nav-links a{font-size:12px}
-      .nav-logo-button{font-size:14px;padding:6px 10px}
+      .nav-logo-button{font-size:16px;padding:8px 14px}
       .theme-toggle{padding:6px 8px;margin-left:8px}
       .theme-toggle span:last-child{display:none}
+      
+      .footer-content{grid-template-columns:1fr;gap:24px}
+      .footer-section h3, .footer-section h4{font-size:16px}
+    }
+    
+    /* Footer Styles */
+    .site-footer{
+      background:linear-gradient(135deg, rgba(15,20,25,0.95), rgba(10,14,26,0.98));
+      border-top:1px solid rgba(255,255,255,0.1);
+      padding:40px 0 20px 0;
+      margin-top:60px;
+      width:100%;
+      clear:both;
+    }
+    
+    .footer-container{
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+    
+    .footer-content{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr;
+      gap:40px;
+      margin-bottom:30px;
+    }
+    
+    .footer-section h3{
+      color:var(--accent-light);
+      font-size:20px;
+      font-weight:700;
+      margin:0 0 16px 0;
+    }
+    
+    .footer-section h4{
+      color:var(--text);
+      font-size:16px;
+      font-weight:600;
+      margin:0 0 12px 0;
+    }
+    
+    .footer-section p{
+      color:var(--text-dim);
+      font-size:14px;
+      line-height:1.6;
+      margin:0;
+    }
+    
+    .footer-section ul{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+    
+    .footer-section ul li{
+      margin:8px 0;
+    }
+    
+    .footer-section ul li a{
+      color:var(--text-dim);
+      text-decoration:none;
+      font-size:14px;
+      transition:color 0.3s ease;
+    }
+    
+    .footer-section ul li a:hover{
+      color:var(--accent-light);
+    }
+    
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,0.1);
+      padding-top:20px;
+      text-align:center;
+    }
+    
+    .footer-bottom p{
+      color:var(--muted);
+      font-size:13px;
+      margin:0;
+    }
+    
+    [data-theme="light"] .site-footer{
+      background:linear-gradient(135deg, rgba(248,250,252,0.95), rgba(241,245,249,0.98));
+      border-top:1px solid rgba(0,0,0,0.1);
+    }
+    
+    [data-theme="light"] .footer-bottom{
+      border-top:1px solid rgba(0,0,0,0.1);
     }
   </style>
 </head>
@@ -980,5 +1072,35 @@
 
 })();
 </script>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>NoSpyLinks</h3>
+        <p>Privacy-focused URL cleaning tool. Remove tracking parameters and protect your privacy online.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 NoSpyLinks. All rights reserved. | Made with privacy in mind.</p>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>

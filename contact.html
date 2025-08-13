@@ -3,6 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
   <title>Contact - NoSpyLinks</title>
   <meta name="description" content="Get in touch with the NoSpyLinks team. Report issues, suggest features, or ask questions about our privacy-focused URL cleaning tool." />
   <style>
@@ -13,7 +16,15 @@
       --accent:#06b6d4;
       --accent-light:#67e8f9;
       --accent-dark:#0891b2;
-      --text:#f1f5f9;
+      --text:        <        <div class="contact-method">
+          <h4>💬 Quick Response</h4>
+          <p>We typically respond within 24 hours during business days</p>
+          <a href="mailto:support@nospylinks.com?subject=Urgent - NoSpyLinks">support@nospylinks.com</a>
+        </div>lass="contact-method">
+          <h4>📧 General Contact</h4>
+          <p>Questions, support, bug reports, feature requests, partnerships, or any other inquiries</p>
+          <a href="mailto:support@nospylinks.com?subject=NoSpyLinks Inquiry">support@nospylinks.com</a>
+        </div>f9;
       --text-dim:#cbd5e1;
       --glass:rgba(255,255,255,0.05);
       --glass-border:rgba(255,255,255,0.1);
@@ -109,10 +120,10 @@
     .nav-logo-button{
       background:linear-gradient(135deg, var(--accent-light), var(--accent));
       color:#0a0e1a;
-      padding:8px 16px;
+      padding:10px 20px;
       border-radius:8px;
       font-weight:700;
-      font-size:18px;
+      font-size:20px;
       transition:all 0.3s ease;
       box-shadow:0 2px 8px rgba(6,182,212,0.3);
       border:none;
@@ -402,15 +413,104 @@
       .nav-container{padding:0 16px}
       .nav-links{gap:20px}
       .nav-links a{font-size:13px}
-      .nav-logo-button{font-size:16px;padding:6px 12px}
+      .nav-logo-button{font-size:18px;padding:8px 16px}
     }
     
     @media (max-width:480px){
       .hero h1{font-size:28px}
       .content{padding:20px}
-      .nav-logo-button{font-size:14px;padding:6px 10px}
+      .nav-logo-button{font-size:16px;padding:8px 14px}
       .nav-links{gap:16px}
       .theme-toggle{margin-left:8px;padding:6px 8px}
+      
+      .footer-content{grid-template-columns:1fr;gap:24px}
+      .footer-section h3, .footer-section h4{font-size:16px}
+    }
+    
+    /* Footer Styles */
+    .site-footer{
+      background:linear-gradient(135deg, rgba(15,20,25,0.95), rgba(10,14,26,0.98));
+      border-top:1px solid rgba(255,255,255,0.1);
+      padding:40px 0 20px 0;
+      margin-top:60px;
+      width:100%;
+      clear:both;
+    }
+    
+    .footer-container{
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+    
+    .footer-content{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr;
+      gap:40px;
+      margin-bottom:30px;
+    }
+    
+    .footer-section h3{
+      color:var(--accent-light);
+      font-size:20px;
+      font-weight:700;
+      margin:0 0 16px 0;
+    }
+    
+    .footer-section h4{
+      color:var(--text);
+      font-size:16px;
+      font-weight:600;
+      margin:0 0 12px 0;
+    }
+    
+    .footer-section p{
+      color:var(--text-dim);
+      font-size:14px;
+      line-height:1.6;
+      margin:0;
+    }
+    
+    .footer-section ul{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+    
+    .footer-section ul li{
+      margin:8px 0;
+    }
+    
+    .footer-section ul li a{
+      color:var(--text-dim);
+      text-decoration:none;
+      font-size:14px;
+      transition:color 0.3s ease;
+    }
+    
+    .footer-section ul li a:hover{
+      color:var(--accent-light);
+    }
+    
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,0.1);
+      padding-top:20px;
+      text-align:center;
+    }
+    
+    .footer-bottom p{
+      color:var(--muted);
+      font-size:13px;
+      margin:0;
+    }
+    
+    [data-theme="light"] .site-footer{
+      background:linear-gradient(135deg, rgba(248,250,252,0.95), rgba(241,245,249,0.98));
+      border-top:1px solid rgba(0,0,0,0.1);
+    }
+    
+    [data-theme="light"] .footer-bottom{
+      border-top:1px solid rgba(0,0,0,0.1);
     }
   </style>
 </head>
@@ -443,24 +543,24 @@
       <h2>📧 Contact Methods</h2>
       <div class="contact-grid">
         <div class="contact-method">
-          <h4>🐛 Report Issues</h4>
-          <p>Found a bug or having trouble with NoSpyLinks?</p>
-          <a href="mailto:support@nospylinks.com?subject=Bug Report">support@nospylinks.com</a>
+          <h4>� General Contact</h4>
+          <p>Questions, support, bug reports, feature requests, partnerships, or any other inquiries</p>
+          <a href="mailto:support@nospylinks.com?subject=NoSpyLinks Inquiry">support@nospylinks.com</a>
         </div>
         <div class="contact-method">
-          <h4>💡 Feature Requests</h4>
-          <p>Have an idea to make NoSpyLinks better?</p>
-          <a href="mailto:features@nospylinks.com?subject=Feature Request">features@nospylinks.com</a>
+          <h4>� Quick Response</h4>
+          <p>We typically respond within 24 hours during business days</p>
+          <a href="mailto:support@nospylinks.com?subject=Urgent - NoSpyLinks">support@nospylinks.com</a>
         </div>
         <div class="contact-method">
-          <h4>🤝 Partnerships</h4>
-          <p>Interested in collaborating or partnerships?</p>
-          <a href="mailto:partnerships@nospylinks.com?subject=Partnership Inquiry">partnerships@nospylinks.com</a>
+          <h4>🔒 Privacy Focused</h4>
+          <p>Your communications are private and never shared with third parties</p>
+          <a href="mailto:support@nospylinks.com?subject=Privacy Question">support@nospylinks.com</a>
         </div>
         <div class="contact-method">
-          <h4>❓ General Questions</h4>
-          <p>General inquiries about NoSpyLinks</p>
-          <a href="mailto:hello@nospylinks.com?subject=General Inquiry">hello@nospylinks.com</a>
+          <h4>🌟 Feedback Welcome</h4>
+          <p>Love NoSpyLinks? Have suggestions? We'd love to hear from you!</p>
+          <a href="mailto:support@nospylinks.com?subject=Feedback - NoSpyLinks">support@nospylinks.com</a>
         </div>
       </div>
     </div>
@@ -469,7 +569,7 @@
       <h2>✉️ Send Us a Message</h2>
       <p>Use the form below to send us a message directly. We'll get back to you as soon as possible!</p>
       
-      <form id="contactForm">
+      <form id="contactForm" action="mailto:support@nospylinks.com" method="post" enctype="text/plain">
         <div class="form-group">
           <label for="name">Your Name</label>
           <input type="text" id="name" name="name" required>
@@ -541,7 +641,7 @@
         <div class="contact-method">
           <h4>📰 Newsletter</h4>
           <p>Get notified about new features and updates</p>
-          <a href="mailto:newsletter@nospylinks.com?subject=Newsletter Signup">Subscribe</a>
+          <a href="mailto:support@nospylinks.com?subject=Newsletter Signup">Subscribe</a>
         </div>
         <div class="contact-method">
           <h4>💻 Open Source</h4>
@@ -596,9 +696,21 @@
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    // Simulate form submission
+    // Get form data
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+    
+    // Create mailto URL with form data
+    const mailtoUrl = `mailto:support@nospylinks.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+    
+    // Open email client
+    window.location.href = mailtoUrl;
+    
+    // Show success message
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
+    submitBtn.textContent = 'Opening Email Client...';
     
     setTimeout(() => {
       contactForm.reset();
@@ -613,5 +725,35 @@
     }, 1500);
   });
 </script>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>NoSpyLinks</h3>
+        <p>Privacy-focused URL cleaning tool. Remove tracking parameters and protect your privacy online.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 NoSpyLinks. All rights reserved. | Made with privacy in mind.</p>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
