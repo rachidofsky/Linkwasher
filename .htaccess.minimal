@@ -1,0 +1,7 @@
+# Minimal .htaccess for maximum compatibility
+# If this still causes 500 errors, delete this file entirely
+
+# Only basic file protection
+<Files ".htaccess">
+    Require all denied
+</Files>
