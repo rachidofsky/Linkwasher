@@ -10,44 +10,46 @@
   <meta name="description" content="NoSpyLinks Privacy Policy - Learn how we protect your privacy and handle your data." />
   <style>
     :root{
-      --bg:#0a0e1a;
-      --card:#0f1419;
-      --muted:#94a3b8;
-      --accent:#06b6d4;
-      --accent-light:#67e8f9;
-      --accent-dark:#0891b2;
-      --text:#f1f5f9;
-      --text-dim:#cbd5e1;
-      --glass:rgba(255,255,255,0.05);
-      --glass-border:rgba(255,255,255,0.1);
+      --bg:#0f0f0f;
+      --card:#1a1a1a;
+      --muted:#888888;
+      --accent:#ffffff;
+      --accent-light:#f5f5f5;
+      --accent-dark:#e0e0e0;
+      --text:#ffffff;
+      --text-dim:#cccccc;
+      --glass:rgba(255,255,255,0.08);
+      --glass-border:rgba(255,255,255,0.15);
       --success:#10b981;
       --warning:#f59e0b;
       --danger:#ef4444;
+      --spy-black:#1a1a1a;
+      --spy-white:#ffffff;
     }
     
     /* Light Mode Theme */
     [data-theme="light"]{
-      --bg:#f8fafc;
-      --card:#ffffff;
-      --muted:#64748b;
-      --accent:#0891b2;
-      --accent-light:#0e7490;
-      --accent-dark:#164e63;
-      --text:#1e293b;
-      --text-dim:#475569;
-      --glass:rgba(0,0,0,0.05);
-      --glass-border:rgba(0,0,0,0.1);
+      --bg:#ffffff;
+      --card:#f8f8f8;
+      --muted:#666666;
+      --accent:#1a1a1a;
+      --accent-light:#2a2a2a;
+      --accent-dark:#000000;
+      --text:#1a1a1a;
+      --text-dim:#555555;
+      --glass:rgba(0,0,0,0.08);
+      --glass-border:rgba(0,0,0,0.15);
       --success:#059669;
       --warning:#d97706;
       --danger:#dc2626;
     }
     
     [data-theme="light"] body{
-      background:radial-gradient(ellipse at top, #e2e8f0 0%, #f1f5f9 50%, #f8fafc 100%);
+      background:radial-gradient(ellipse at top, #f5f5f5 0%, #ffffff 50%, #f8f8f8 100%);
     }
     
     [data-theme="light"] .navbar{
-      background:rgba(248,250,252,0.95);
+      background:rgba(248,248,248,0.95);
       border-bottom:1px solid rgba(0,0,0,0.1);
     }
     
@@ -66,7 +68,7 @@
     
     body{
       font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background:radial-gradient(ellipse at top, #1e293b 0%, #0f172a 50%, #020617 100%);
+      background:radial-gradient(ellipse at top, var(--card) 0%, var(--bg) 50%, #0a0a0a 100%);
       background-attachment:fixed;
       color:var(--text);
       margin:0;
@@ -108,20 +110,21 @@
     }
     
     .nav-logo-button{
-      background:linear-gradient(135deg, var(--accent-light), var(--accent));
-      color:#0a0e1a;
+      background:transparent;
+      color:var(--accent);
       padding:10px 20px;
+      border:2px solid var(--glass-border);
       border-radius:8px;
       font-weight:700;
       font-size:20px;
       transition:all 0.3s ease;
-      box-shadow:0 2px 8px rgba(6,182,212,0.3);
-      border:none;
+      backdrop-filter:blur(10px);
+      box-shadow:0 4px 12px rgba(0,0,0,0.3);
     }
     
     .nav-logo:hover .nav-logo-button{
       transform:translateY(-1px);
-      box-shadow:0 4px 12px rgba(6,182,212,0.4);
+      box-shadow:0 8px 20px rgba(0,0,0,0.4);
     }
     
     [data-theme="light"] .nav-logo-button{
@@ -278,14 +281,15 @@
     
     .back-link{
       display:inline-block;
-      background:linear-gradient(135deg, var(--accent), var(--accent-dark));
-      color:#0a0e1a;
+      background:transparent;
+      color:var(--accent);
       text-decoration:none;
       padding:12px 24px;
+      border:2px solid var(--glass-border);
       border-radius:12px;
       font-weight:600;
       transition:all 0.3s ease;
-      box-shadow:0 4px 12px rgba(6,182,212,0.3);
+      backdrop-filter:blur(10px);
       margin-top:32px;
     }
     
@@ -402,7 +406,9 @@
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
-        <div class="nav-logo-button">NoSpyLinks</div>
+        <div class="nav-logo-button" style="padding: 4px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: white; border: 1px solid rgba(255,255,255,0.3);">
+          <img src="NoSpy.png" alt="NoSpyLinks" style="height: 32px; width: auto; object-fit: contain;" />
+        </div>
       </a>
       <div class="nav-links">
         <a href="index.html">Home</a>

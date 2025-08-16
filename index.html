@@ -55,44 +55,48 @@
   </script>
   <style>
     :root{
-      --bg:#0a0e1a;
-      --card:#0f1419;
-      --muted:#94a3b8;
-      --accent:#06b6d4;
-      --accent-light:#67e8f9;
-      --accent-dark:#0891b2;
-      --text:#f1f5f9;
-      --text-dim:#cbd5e1;
-      --glass:rgba(255,255,255,0.05);
-      --glass-border:rgba(255,255,255,0.1);
+      --bg:#0f0f0f;
+      --card:#1a1a1a;
+      --muted:#888888;
+      --accent:#ffffff;
+      --accent-light:#f5f5f5;
+      --accent-dark:#e0e0e0;
+      --text:#ffffff;
+      --text-dim:#cccccc;
+      --glass:rgba(255,255,255,0.08);
+      --glass-border:rgba(255,255,255,0.15);
       --success:#10b981;
       --warning:#f59e0b;
       --danger:#ef4444;
+      --spy-black:#1a1a1a;
+      --spy-white:#ffffff;
     }
     
     /* Light Mode Theme */
     [data-theme="light"]{
-      --bg:#f8fafc;
-      --card:#ffffff;
-      --muted:#64748b;
-      --accent:#0891b2;
-      --accent-light:#0e7490;
-      --accent-dark:#164e63;
-      --text:#1e293b;
-      --text-dim:#475569;
-      --glass:rgba(0,0,0,0.05);
-      --glass-border:rgba(0,0,0,0.1);
+      --bg:#ffffff;
+      --card:#f8f8f8;
+      --muted:#666666;
+      --accent:#1a1a1a;
+      --accent-light:#2a2a2a;
+      --accent-dark:#000000;
+      --text:#1a1a1a;
+      --text-dim:#555555;
+      --glass:rgba(0,0,0,0.08);
+      --glass-border:rgba(0,0,0,0.15);
       --success:#059669;
       --warning:#d97706;
       --danger:#dc2626;
+      --spy-black:#1a1a1a;
+      --spy-white:#ffffff;
     }
     
     [data-theme="light"] body{
-      background:radial-gradient(ellipse at top, #e2e8f0 0%, #f1f5f9 50%, #f8fafc 100%);
+      background:linear-gradient(135deg, #ffffff 0%, #f5f5f5 50%, #e8e8e8 100%);
     }
     
     [data-theme="light"] .navbar{
-      background:rgba(248,250,252,0.95);
+      background:rgba(255,255,255,0.95);
       border-bottom:1px solid rgba(0,0,0,0.1);
     }
     
@@ -123,7 +127,7 @@
     
     body{
       font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background:radial-gradient(ellipse at top, #1e293b 0%, #0f172a 50%, #020617 100%);
+      background:linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #2a2a2a 100%);
       background-attachment:fixed;
       color:var(--text);
       margin:0;
@@ -139,9 +143,9 @@
       top:0;
       left:0;
       right:0;
-      background:rgba(15,20,25,0.95);
+      background:rgba(26,26,26,0.95);
       backdrop-filter:blur(20px);
-      border-bottom:1px solid rgba(255,255,255,0.1);
+      border-bottom:1px solid rgba(255,255,255,0.15);
       padding:16px 0;
       z-index:1000;
       transition:all 0.3s ease;
@@ -165,21 +169,22 @@
       color:inherit;
     }
     
-    .nav-logo-button{
-      background:linear-gradient(135deg, var(--accent-light), var(--accent));
-      color:#0a0e1a;
+        .nav-logo-button{
+      background:transparent;
+      color:var(--accent);
       padding:10px 20px;
+      border:2px solid var(--glass-border);
       border-radius:8px;
       font-weight:700;
       font-size:20px;
       transition:all 0.3s ease;
-      box-shadow:0 2px 8px rgba(6,182,212,0.3);
-      border:none;
+      backdrop-filter:blur(10px);
+      box-shadow:0 4px 12px rgba(0,0,0,0.3);
     }
     
     .nav-logo:hover .nav-logo-button{
       transform:translateY(-1px);
-      box-shadow:0 4px 12px rgba(6,182,212,0.4);
+      box-shadow:0 8px 20px rgba(0,0,0,0.4);
     }
     
     [data-theme="light"] .nav-logo-button{
@@ -340,11 +345,12 @@
       display:grid;
       place-items:center;
       border-radius:16px;
-      background:linear-gradient(135deg, var(--accent-light), var(--accent));
+      background:transparent;
+      border:2px solid var(--glass-border);
       font-weight:800;
       font-size:24px;
-      color:#0a0e1a;
-      box-shadow:0 8px 32px rgba(6,182,212,0.3);
+      color:var(--accent);
+      backdrop-filter:blur(10px);
       transition:transform 0.3s ease;
     }
     
@@ -435,22 +441,25 @@
     
     button{
       background:linear-gradient(135deg, var(--accent), var(--accent-dark));
-      border:none;
+      border:1px solid var(--glass-border);
       padding:12px 20px;
-      border-radius:12px;
-      color:#0a0e1a;
+      border-radius:8px;
+      color:var(--spy-black);
       cursor:pointer;
       font-weight:600;
       font-size:14px;
       transition:all 0.3s ease;
-      box-shadow:0 4px 12px rgba(6,182,212,0.3);
+      box-shadow:0 4px 12px rgba(255,255,255,0.1);
+      text-transform:uppercase;
+      letter-spacing:0.5px;
       position:relative;
       overflow:hidden;
     }
     
     button:hover{
       transform:translateY(-2px);
-      box-shadow:0 8px 20px rgba(6,182,212,0.4);
+      box-shadow:0 8px 20px rgba(255,255,255,0.2);
+      background:linear-gradient(135deg, var(--accent-light), var(--accent));
     }
     
     button:active{
@@ -459,16 +468,19 @@
     
     button.ghost{
       background:transparent;
-      border:2px solid rgba(255,255,255,0.1);
+      border:2px solid var(--glass-border);
       color:var(--text-dim);
       box-shadow:none;
+      text-transform:uppercase;
+      letter-spacing:0.5px;
     }
     
     button.ghost:hover{
-      background:rgba(255,255,255,0.05);
+      background:var(--glass);
       border-color:var(--accent);
-      color:var(--accent-light);
-      box-shadow:0 4px 12px rgba(6,182,212,0.2);
+      color:var(--accent);
+      box-shadow:0 4px 12px rgba(255,255,255,0.1);
+      transform:translateY(-2px);
     }
     
     .output{
@@ -719,7 +731,9 @@
   <nav class="navbar">
     <div class="nav-container">
       <a href="#" class="nav-logo">
-        <div class="nav-logo-button">NoSpyLinks</div>
+        <div class="nav-logo-button" style="padding: 4px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: white; border: 1px solid rgba(255,255,255,0.3);">
+          <img src="NoSpy.png" alt="NoSpyLinks" style="height: 32px; width: auto; object-fit: contain;" />
+        </div>
       </a>
       <div class="nav-links">
         <a href="index.html" class="active">Home</a>
@@ -785,13 +799,13 @@
       ====================================================================
       -->
       <div>
-        <h1>Free URL Tracker Remover - Clean Links Instantly | NoSpyLinks</h1>
+        <h1 style="font-weight: 800; letter-spacing: -0.02em; background: linear-gradient(135deg, var(--text) 0%, var(--text-dim) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Free URL Tracker Remover - Clean Links Instantly | NoSpyLinks</h1>
         <p class="lead">Remove tracking parameters from URLs and emails with one click. Privacy-focused tool that works entirely in your browser - no data sent to servers.</p>
         <div class="hero-features" style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; align-items: center; font-size: 14px; color: var(--text-dim);">
-          <span>✅ Removes utm_*, gclid, fbclid</span>
-          <span>🔒 100% Private</span>
-          <span>⚡ Instant Results</span>
-          <span>🆓 Completely Free</span>
+          <span style="padding: 6px 12px; background: var(--glass); border: 1px solid var(--glass-border); border-radius: 6px;">🕵️ Removes utm_*, gclid, fbclid</span>
+          <span style="padding: 6px 12px; background: var(--glass); border: 1px solid var(--glass-border); border-radius: 6px;">🔒 100% Private</span>
+          <span style="padding: 6px 12px; background: var(--glass); border: 1px solid var(--glass-border); border-radius: 6px;">⚡ Instant Results</span>
+          <span style="padding: 6px 12px; background: var(--glass); border: 1px solid var(--glass-border); border-radius: 6px;">🆓 Completely Free</span>
         </div>
       </div>
     </header>
@@ -801,7 +815,7 @@
       <textarea id="input" placeholder="Paste email text or a URL here... (e.g. https://example.com?utm_source=newsletter&utm_medium=email)" maxlength="6000"></textarea>
 
       <div class="controls">
-        <button id="cleanBtn">✨ Clean Links</button>
+        <button id="cleanBtn" class="ghost">✨ Clean Links</button>
         <button id="extractBtn" class="ghost">🔗 Extract Links Only</button>
         <button id="clearBtn" class="ghost">🧹 Clear</button>
         <button id="copyAllBtn" class="ghost">📋 Copy All Cleaned</button>
