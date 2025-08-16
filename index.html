@@ -6,8 +6,53 @@
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-  <title>NoSpyLinks — Strip tracking from links</title>
-  <meta name="description" content="Paste an email or URL and remove common tracking parameters (utm_*, gclid, fbclid, etc.). All processing happens locally in your browser." />
+  <title>NoSpyLinks — Remove Tracking Parameters from URLs | Privacy-Focused Link Cleaner</title>
+  <meta name="description" content="Free online tool to remove tracking parameters (utm_*, gclid, fbclid) from URLs and emails. Protect your privacy with our browser-based link cleaner. No data sent to servers." />
+  <meta name="keywords" content="remove tracking parameters, URL cleaner, privacy tool, utm tracker removal, email privacy, link cleaning, GDPR compliance, browser privacy" />
+  <meta name="author" content="NoSpyLinks" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://nospylinks.com/" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" type="image/png" href="/nospylinks-logo.png" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nospylinks.com/" />
+  <meta property="og:title" content="NoSpyLinks — Remove Tracking Parameters from URLs" />
+  <meta property="og:description" content="Free privacy-focused tool to clean tracking parameters from URLs and emails. Works entirely in your browser - no data sent to servers." />
+  <meta property="og:image" content="https://nospylinks.com/nospylinks-logo.png" />
+  <meta property="og:site_name" content="NoSpyLinks" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://nospylinks.com/" />
+  <meta property="twitter:title" content="NoSpyLinks — Remove Tracking Parameters from URLs" />
+  <meta property="twitter:description" content="Free privacy-focused tool to clean tracking parameters from URLs and emails. Works entirely in your browser." />
+  <meta property="twitter:image" content="https://nospylinks.com/nospylinks-logo.png" />
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "NoSpyLinks",
+    "description": "Privacy-focused tool to remove tracking parameters from URLs and email links",
+    "url": "https://nospylinks.com",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "NoSpyLinks"
+    },
+    "keywords": "URL cleaner, privacy tool, tracking parameter removal, email privacy",
+    "browserRequirements": "Modern web browser with JavaScript enabled"
+  }
+  </script>
   <style>
     :root{
       --bg:#0a0e1a;
@@ -324,7 +369,10 @@
       color:var(--text-dim);
       font-size:16px;
       line-height:1.5;
-      max-width:500px;
+      max-width:600px;
+      text-align:center;
+      margin-left:auto;
+      margin-right:auto;
     }
 
     .card{
@@ -737,14 +785,20 @@
       ====================================================================
       -->
       <div>
-        <h1>Clean Your Links Instantly</h1>
-        <p class="lead">Remove tracking parameters from URLs and emails with one click. Privacy-focused, works entirely in your browser.</p>
+        <h1>Free URL Tracker Remover - Clean Links Instantly | NoSpyLinks</h1>
+        <p class="lead">Remove tracking parameters from URLs and emails with one click. Privacy-focused tool that works entirely in your browser - no data sent to servers.</p>
+        <div class="hero-features" style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; align-items: center; font-size: 14px; color: var(--text-dim);">
+          <span>✅ Removes utm_*, gclid, fbclid</span>
+          <span>🔒 100% Private</span>
+          <span>⚡ Instant Results</span>
+          <span>🆓 Completely Free</span>
+        </div>
       </div>
     </header>
 
     <main class="card" role="main">
-      <label for="input">Paste email body or one/multiple links</label>
-      <textarea id="input" placeholder="Paste email text or a URL here... (e.g. https://example.com?utm_source=newsletter&utm_medium=email)"></textarea>
+      <label for="input">Paste email body or one/multiple links <span id="wordCount" style="color: var(--muted); font-size: 12px;">(0/1000 words)</span></label>
+      <textarea id="input" placeholder="Paste email text or a URL here... (e.g. https://example.com?utm_source=newsletter&utm_medium=email)" maxlength="6000"></textarea>
 
       <div class="controls">
         <button id="cleanBtn">✨ Clean Links</button>
@@ -776,6 +830,52 @@
         -->
       </footer>
     </main>
+
+    <!-- SEO Content Sections -->
+    <section class="content-section" style="margin-top: 40px; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 20px;">
+      <div class="card" style="padding: 40px;">
+        <h2 style="color: var(--text); margin-bottom: 20px; font-size: 28px;">What is NoSpyLinks? Professional URL Tracking Parameter Removal</h2>
+        <p style="color: var(--text-dim); line-height: 1.6; margin-bottom: 30px;">NoSpyLinks is a free, privacy-focused web application designed to remove tracking parameters from URLs and email links. Whether you're dealing with utm_source, utm_medium, utm_campaign, gclid, fbclid, or other tracking codes, our tool instantly cleans your links while protecting your privacy.</p>
+        
+        <h3 style="color: var(--text); margin: 30px 0 15px 0; font-size: 22px;">Supported Tracking Parameters</h3>
+        <p style="color: var(--text-dim); line-height: 1.6; margin-bottom: 15px;">Our advanced URL cleaner removes the following tracking parameters:</p>
+        <ul style="columns: 2; margin: 15px 0; padding-left: 30px; color: var(--text-dim); line-height: 1.6;">
+          <li><strong style="color: var(--accent);">UTM Parameters:</strong> utm_source, utm_medium, utm_campaign, utm_term, utm_content</li>
+          <li><strong style="color: var(--accent);">Google Analytics:</strong> gclid, gclsrc, _ga, _gl</li>
+          <li><strong style="color: var(--accent);">Facebook:</strong> fbclid, mc_cid, mc_eid</li>
+          <li><strong style="color: var(--accent);">Instagram:</strong> igshid, si</li>
+          <li><strong style="color: var(--accent);">HubSpot:</strong> _hsenc, _hsmi</li>
+          <li><strong style="color: var(--accent);">Other platforms:</strong> yclid, pk_campaign, pk_kwd</li>
+        </ul>
+
+        <h3 style="color: var(--text); margin: 30px 0 15px 0; font-size: 22px;">Why Remove URL Tracking Parameters?</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0;">
+          <div class="feature-box" style="padding: 20px; background: var(--glass); border: 1px solid var(--glass-border); border-radius: 8px;">
+            <h4 style="color: var(--accent); margin-bottom: 10px;">🔒 Privacy Protection</h4>
+            <p style="color: var(--text-dim); line-height: 1.5;">Prevent companies from tracking your browsing behavior across websites and building detailed profiles about your interests.</p>
+          </div>
+          <div class="feature-box" style="padding: 20px; background: var(--glass); border: 1px solid var(--glass-border); border-radius: 8px;">
+            <h4 style="color: var(--accent); margin-bottom: 10px;">🧹 Clean URLs</h4>
+            <p style="color: var(--text-dim); line-height: 1.5;">Share clean, readable URLs without ugly tracking parameters that clutter links and make them hard to read.</p>
+          </div>
+          <div class="feature-box" style="padding: 20px; background: var(--glass); border: 1px solid var(--glass-border); border-radius: 8px;">
+            <h4 style="color: var(--accent); margin-bottom: 10px;">⚡ Better Performance</h4>
+            <p style="color: var(--text-dim); line-height: 1.5;">Shorter URLs load faster and are easier to manage, especially when sharing links in emails or social media.</p>
+          </div>
+        </div>
+
+        <h3 style="color: var(--text); margin: 30px 0 15px 0; font-size: 22px;">How to Use NoSpyLinks URL Cleaner</h3>
+        <ol style="margin: 15px 0; padding-left: 30px; line-height: 1.6; color: var(--text-dim);">
+          <li><strong style="color: var(--accent);">Paste Your Content:</strong> Copy and paste email content, single URLs, or multiple links into the text area above.</li>
+          <li><strong style="color: var(--accent);">Choose Your Action:</strong> Click "Clean Links" to remove tracking parameters, or "Extract Links Only" to find all URLs in your content.</li>
+          <li><strong style="color: var(--accent);">Get Clean Results:</strong> Instantly see your cleaned URLs with all tracking parameters removed.</li>
+          <li><strong style="color: var(--accent);">Copy and Share:</strong> Use the copy buttons to quickly share your clean, privacy-friendly links.</li>
+        </ol>
+
+        <h3 style="color: var(--text); margin: 30px 0 15px 0; font-size: 22px;">Privacy-First URL Cleaning</h3>
+        <p style="color: var(--text-dim); line-height: 1.6;">Unlike other online tools, NoSpyLinks processes everything locally in your browser. Your URLs and data never leave your device, ensuring complete privacy and security. This makes it perfect for cleaning sensitive business links, personal emails, or any content you want to keep private.</p>
+      </div>
+    </section>
   </div>
 
 <script>
@@ -787,6 +887,33 @@
   const copyAllBtn = document.getElementById('copyAllBtn');
   const list = document.getElementById('list');
   const count = document.getElementById('count');
+  const wordCount = document.getElementById('wordCount');
+
+  // Word count and limit functionality
+  function updateWordCount() {
+    const text = input.value;
+    const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+    const maxWords = 1000;
+    
+    wordCount.textContent = `(${words}/${maxWords} words)`;
+    
+    if (words > maxWords) {
+      wordCount.style.color = 'var(--danger)';
+      // Truncate to approximately 1000 words
+      const wordsArray = text.trim().split(/\s+/);
+      const truncatedText = wordsArray.slice(0, maxWords).join(' ');
+      input.value = truncatedText;
+      wordCount.textContent = `(${maxWords}/${maxWords} words - limit reached)`;
+    } else if (words > maxWords * 0.9) {
+      wordCount.style.color = 'var(--warning)';
+    } else {
+      wordCount.style.color = 'var(--muted)';
+    }
+  }
+
+  // Add event listeners for word count
+  input.addEventListener('input', updateWordCount);
+  input.addEventListener('paste', () => setTimeout(updateWordCount, 10));
 
   const TRACKING_PARAMS = [
     'utm_source','utm_medium','utm_campaign','utm_term','utm_content',
