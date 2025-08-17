@@ -4,8 +4,8 @@
   "description": "Remove tracking parameters from URLs and emails. Privacy-focused link cleaner.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0e1a",
-  "theme_color": "#06b6d4",
+  "background_color": "#0f0f0f",
+  "theme_color": "#ffffff",
   "icons": [
     {
       "src": "nospylinks-logo.png",

@@ -18,132 +18,120 @@
   <meta property="og:type" content="website" />
   <style>
     :root{
-      --bg:#0a0e1a;
-      --card:#0f1419;
-      --muted:#94a3b8;
-      --accent:#06b6d4;
-      --accent-light:#67e8f9;
-      --accent-dark:#0891b2;
-      --text:        <        <div class="contact-method">
-          <h4>💬 Quick Response</h4>
-          <p>We typically respond within 24 hours during business days</p>
-          <a href="mailto:support@nospylinks.com?subject=Urgent - NoSpyLinks">support@nospylinks.com</a>
-        </div>lass="contact-method">
-          <h4>📧 General Contact</h4>
-          <p>Questions, support, bug reports, feature requests, partnerships, or any other inquiries</p>
-          <a href="mailto:support@nospylinks.com?subject=NoSpyLinks Inquiry">support@nospylinks.com</a>
-        </div>f9;
-      --text-dim:#cbd5e1;
-      --glass:rgba(255,255,255,0.05);
-      --glass-border:rgba(255,255,255,0.1);
+      --bg:#0f0f0f;
+      --card:#1a1a1a;
+      --muted:#888888;
+      --accent:#ffffff;
+      --accent-light:#f5f5f5;
+      --accent-dark:#e0e0e0;
+      --text:#ffffff;
+      --text-dim:#cccccc;
+      --glass:rgba(255,255,255,0.08);
+      --glass-border:rgba(255,255,255,0.15);
       --success:#10b981;
       --warning:#f59e0b;
       --danger:#ef4444;
+      --spy-black:#1a1a1a;
+      --spy-white:#ffffff;
     }
     
     /* Light Mode Theme */
     [data-theme="light"]{
-      --bg:#f8fafc;
-      --card:#ffffff;
-      --muted:#64748b;
-      --accent:#0891b2;
-      --accent-light:#0e7490;
-      --accent-dark:#164e63;
-      --text:#1e293b;
-      --text-dim:#475569;
-      --glass:rgba(0,0,0,0.05);
-      --glass-border:rgba(0,0,0,0.1);
+      --bg:#ffffff;
+      --card:#f8f8f8;
+      --muted:#666666;
+      --accent:#1a1a1a;
+      --accent-light:#2a2a2a;
+      --accent-dark:#000000;
+      --text:#1a1a1a;
+      --text-dim:#555555;
+      --glass:rgba(0,0,0,0.08);
+      --glass-border:rgba(0,0,0,0.15);
       --success:#059669;
       --warning:#d97706;
       --danger:#dc2626;
     }
     
     [data-theme="light"] body{
-      background:radial-gradient(ellipse at top, #e2e8f0 0%, #f1f5f9 50%, #f8fafc 100%);
+      background:radial-gradient(ellipse at top, #f5f5f5 0%, #ffffff 50%, #f8f8f8 100%);
     }
     
     [data-theme="light"] .navbar{
-      background:rgba(248,250,252,0.95);
+      background:rgba(248,248,248,0.95);
       border-bottom:1px solid rgba(0,0,0,0.1);
     }
     
     [data-theme="light"] input, [data-theme="light"] textarea{
-      border:2px solid rgba(0,0,0,0.1);
-      background:rgba(0,0,0,0.02);
+      background:rgba(255,255,255,0.8);
+      border:1px solid rgba(0,0,0,0.15);
+      color:var(--text);
     }
     
-    [data-theme="light"] input:focus, [data-theme="light"] textarea:focus{
-      border-color:var(--accent);
-      background:rgba(0,0,0,0.05);
-      box-shadow:0 0 0 3px rgba(8,145,178,0.1);
-    }
-    
-    *{box-sizing:border-box}
-    
-    html,body{height:100%;scroll-behavior:smooth}
+    *{margin:0;padding:0;box-sizing:border-box;}
     
     body{
       font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background:radial-gradient(ellipse at top, #1e293b 0%, #0f172a 50%, #020617 100%);
-      background-attachment:fixed;
+      background:radial-gradient(ellipse at top, var(--card) 0%, var(--bg) 50%, #0a0a0a 100%);
       color:var(--text);
-      margin:0;
-      padding:120px 20px 40px 20px;
-      min-height:100vh;
       line-height:1.6;
+      padding:100px 32px 32px 32px;
+      min-height:100vh;
     }
     
-    /* Fixed Navigation Bar */
     .navbar{
       position:fixed;
       top:0;
       left:0;
       right:0;
-      background:rgba(15,20,25,0.95);
-      backdrop-filter:blur(20px);
-      border-bottom:1px solid rgba(255,255,255,0.1);
-      padding:16px 0;
+      background:rgba(15,15,15,0.95);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--glass-border);
+      padding:16px 32px;
       z-index:1000;
-      transition:all 0.3s ease;
-      height:72px;
-      box-sizing:border-box;
     }
     
     .nav-container{
       max-width:1200px;
       margin:0 auto;
-      padding:0 20px;
       display:flex;
-      align-items:center;
       justify-content:space-between;
+      align-items:center;
     }
     
     .nav-logo{
       display:flex;
       align-items:center;
       text-decoration:none;
-      color:inherit;
+      gap:12px;
+    }
+    
+    .nav-logo-img{
+      width:32px;
+      height:32px;
+      border-radius:8px;
     }
     
     .nav-logo-button{
-      background:linear-gradient(135deg, var(--accent-light), var(--accent));
-      color:#0a0e1a;
+      background:transparent;
+      color:var(--accent);
       padding:10px 20px;
+      border:2px solid var(--glass-border);
       border-radius:8px;
       font-weight:700;
       font-size:20px;
       transition:all 0.3s ease;
-      box-shadow:0 2px 8px rgba(6,182,212,0.3);
-      border:none;
-    }
-    
-    .nav-logo:hover .nav-logo-button{
+      backdrop-filter:blur(10px);
+      box-shadow:0 4px 12px rgba(0,0,0,0.3);
+    }    .nav-logo:hover .nav-logo-button{
+      background:var(--glass);
+      border-color:var(--accent);
       transform:translateY(-1px);
-      box-shadow:0 4px 12px rgba(6,182,212,0.4);
+      box-shadow:0 8px 20px rgba(0,0,0,0.4);
     }
     
     [data-theme="light"] .nav-logo-button{
-      box-shadow:0 2px 8px rgba(8,145,178,0.3);
+      color:var(--accent);
+      border-color:var(--glass-border);
     }
     
     .nav-links{
@@ -155,80 +143,46 @@
     .nav-links a{
       color:var(--text-dim);
       text-decoration:none;
-      font-size:14px;
       font-weight:500;
+      padding:8px 16px;
+      border-radius:8px;
       transition:all 0.3s ease;
-      padding:8px 0;
-      position:relative;
     }
     
-    .nav-links a:hover{
-      color:var(--accent-light);
+    .nav-links a:hover, .nav-links a.active{
+      color:var(--accent);
+      background:var(--glass);
     }
     
-    .nav-links a::after{
-      content:'';
-      position:absolute;
-      bottom:0;
-      left:0;
-      width:0;
-      height:2px;
-      background:var(--accent);
-      transition:width 0.3s ease;
-    }
-    
-    .nav-links a:hover::after{
-      width:100%;
-    }
-    
-    .nav-links a.active{
-      color:var(--accent-light);
-    }
-    
-    .nav-links a.active::after{
-      width:100%;
-    }
-    
-    /* Dark Mode Toggle */
     .theme-toggle{
-      background:none;
-      border:2px solid rgba(255,255,255,0.2);
-      color:var(--text-dim);
-      padding:8px 12px;
+      background:transparent;
+      border:2px solid var(--glass-border);
+      color:var(--accent);
+      padding:8px;
       border-radius:8px;
       cursor:pointer;
-      font-size:14px;
-      transition:all 0.3s ease;
       display:flex;
       align-items:center;
-      gap:6px;
-      margin-left:16px;
+      gap:8px;
+      font-size:14px;
+      transition:all 0.3s ease;
+      backdrop-filter:blur(10px);
     }
     
     .theme-toggle:hover{
-      background:rgba(255,255,255,0.1);
-      border-color:var(--accent);
-      color:var(--accent-light);
-    }
-    
-    [data-theme="light"] .theme-toggle{
-      border-color:rgba(0,0,0,0.2);
-    }
-    
-    [data-theme="light"] .theme-toggle:hover{
-      background:rgba(0,0,0,0.1);
+      background:var(--glass);
       border-color:var(--accent);
     }
     
-    .container{
+    .content{
       max-width:800px;
       margin:0 auto;
-      animation:fadeInUp 0.6s ease-out;
-    }
-    
-    @keyframes fadeInUp{
-      from{opacity:0;transform:translateY(30px)}
-      to{opacity:1;transform:translateY(0)}
+      background:var(--glass);
+      backdrop-filter:blur(10px);
+      border:1px solid var(--glass-border);
+      border-radius:24px;
+      padding:40px;
+      box-shadow:0 8px 32px rgba(0,0,0,0.3);
     }
     
     .hero{
@@ -239,134 +193,102 @@
     .hero h1{
       font-size:48px;
       font-weight:800;
-      margin:0 0 16px 0;
-      background:linear-gradient(135deg, var(--text), var(--accent-light));
-      background-clip:text;
+      margin-bottom:16px;
+      background:linear-gradient(135deg, var(--accent), var(--accent-light));
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
-      letter-spacing:-0.02em;
+      background-clip:text;
     }
     
     .hero p{
       font-size:20px;
       color:var(--text-dim);
-      margin:0;
       max-width:600px;
       margin:0 auto;
     }
     
-    .content{
-      background:linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-      backdrop-filter:blur(20px);
-      padding:40px;
-      border-radius:20px;
-      border:1px solid var(--glass-border);
-      box-shadow:0 20px 40px rgba(0,0,0,0.4);
-      margin-bottom:32px;
-    }
-    
-    .content h2{
-      color:var(--accent-light);
-      font-size:28px;
-      font-weight:700;
-      margin:0 0 24px 0;
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
-    
-    .content h3{
-      color:var(--text);
-      font-size:20px;
-      font-weight:600;
-      margin:32px 0 16px 0;
-    }
-    
-    .content p{
-      color:var(--text-dim);
-      font-size:16px;
-      margin:0 0 16px 0;
-    }
-    
-    .contact-grid{
+    .contact-methods{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
       gap:24px;
-      margin:32px 0;
+      margin-bottom:48px;
     }
     
     .contact-method{
-      background:linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
-      border:1px solid rgba(255,255,255,0.1);
+      background:var(--glass);
+      border:1px solid var(--glass-border);
+      border-radius:16px;
       padding:24px;
-      border-radius:12px;
-      transition:transform 0.3s ease;
-      text-align:center;
+      transition:all 0.3s ease;
     }
     
     .contact-method:hover{
+      background:rgba(255,255,255,0.12);
+      border-color:var(--accent);
       transform:translateY(-2px);
     }
     
     .contact-method h4{
-      color:var(--accent-light);
       font-size:18px;
-      font-weight:600;
-      margin:0 0 12px 0;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
+      margin-bottom:8px;
+      color:var(--accent);
     }
     
     .contact-method p{
       color:var(--text-dim);
-      font-size:14px;
-      margin:0 0 16px 0;
+      margin-bottom:12px;
     }
     
     .contact-method a{
-      color:var(--accent-light);
+      color:var(--accent);
       text-decoration:none;
       font-weight:600;
-      transition:color 0.3s ease;
     }
     
     .contact-method a:hover{
+      text-decoration:underline;
+    }
+    
+    .contact-form{
+      background:var(--glass);
+      border:1px solid var(--glass-border);
+      border-radius:16px;
+      padding:32px;
+      margin-bottom:48px;
+    }
+    
+    .contact-form h3{
+      font-size:24px;
+      margin-bottom:24px;
       color:var(--accent);
     }
     
     .form-group{
-      margin-bottom:24px;
+      margin-bottom:20px;
     }
     
     .form-group label{
       display:block;
-      font-size:14px;
-      font-weight:600;
-      color:var(--text-dim);
       margin-bottom:8px;
+      color:var(--text);
+      font-weight:500;
     }
     
-    .form-group input,
-    .form-group textarea{
+    .form-group input, .form-group textarea{
       width:100%;
-      padding:12px 16px;
-      border:2px solid rgba(255,255,255,0.1);
+      background:rgba(255,255,255,0.08);
+      border:2px solid var(--glass-border);
       border-radius:8px;
-      background:rgba(255,255,255,0.02);
+      padding:12px;
       color:var(--text);
       font-size:16px;
-      font-family:inherit;
       transition:all 0.3s ease;
+      backdrop-filter:blur(10px);
     }
     
-    .form-group input:focus,
-    .form-group textarea:focus{
+    .form-group input:focus, .form-group textarea:focus{
       outline:none;
       border-color:var(--accent);
-      background:rgba(255,255,255,0.05);
-      box-shadow:0 0 0 3px rgba(6,182,212,0.1);
+      background:rgba(255,255,255,0.12);
     }
     
     .form-group textarea{
@@ -376,38 +298,49 @@
     
     .btn{
       display:inline-block;
-      background:linear-gradient(135deg, var(--accent), var(--accent-dark));
-      color:#0a0e1a;
+      background:transparent;
+      color:var(--accent);
       text-decoration:none;
       padding:12px 24px;
-      border:none;
+      border:2px solid var(--glass-border);
       border-radius:12px;
       font-weight:600;
-      font-size:16px;
-      cursor:pointer;
       transition:all 0.3s ease;
-      box-shadow:0 4px 12px rgba(6,182,212,0.3);
+      backdrop-filter:blur(10px);
+      cursor:pointer;
+      font-size:16px;
     }
     
     .btn:hover{
-      transform:translateY(-2px);
-      box-shadow:0 8px 20px rgba(6,182,212,0.4);
+      background:var(--glass);
+      border-color:var(--accent);
+      transform:translateY(-1px);
     }
     
-    .btn:disabled{
-      opacity:0.6;
-      cursor:not-allowed;
-      transform:none;
+    .cta{
+      text-align:center;
+      background:var(--glass);
+      border:1px solid var(--glass-border);
+      border-radius:16px;
+      padding:32px;
     }
     
-    .success-message{
-      background:linear-gradient(135deg, rgba(16,185,129,0.1), rgba(5,150,105,0.05));
-      border:1px solid rgba(16,185,129,0.2);
-      color:var(--success);
-      padding:16px;
-      border-radius:8px;
-      margin-top:16px;
-      display:none;
+    .cta h3{
+      font-size:24px;
+      margin-bottom:16px;
+      color:var(--accent);
+    }
+    
+    .cta p{
+      color:var(--text-dim);
+      margin:0 0 24px 0;
+    }
+    
+    .footer{
+      text-align:center;
+      margin-top:48px;
+      color:var(--text-dim);
+      font-size:14px;
     }
     
     @media (max-width:768px){
@@ -415,254 +348,99 @@
       .content{padding:24px}
       .hero h1{font-size:36px}
       .hero p{font-size:18px}
-      .content h2{font-size:24px}
-      .contact-grid{grid-template-columns:1fr;gap:16px}
-      
       .nav-container{padding:0 16px}
-      .nav-links{gap:20px}
-      .nav-links a{font-size:13px}
+      .nav-links{gap:16px}
       .nav-logo-button{font-size:18px;padding:8px 16px}
     }
     
     @media (max-width:480px){
-      .hero h1{font-size:28px}
-      .content{padding:20px}
+      .nav-links a{padding:6px 12px;font-size:14px}
       .nav-logo-button{font-size:16px;padding:8px 14px}
-      .nav-links{gap:16px}
-      .theme-toggle{margin-left:8px;padding:6px 8px}
-      
-      .footer-content{grid-template-columns:1fr;gap:24px}
-      .footer-section h3, .footer-section h4{font-size:16px}
-    }
-    
-    /* Footer Styles */
-    .site-footer{
-      background:linear-gradient(135deg, rgba(15,20,25,0.95), rgba(10,14,26,0.98));
-      border-top:1px solid rgba(255,255,255,0.1);
-      padding:40px 0 20px 0;
-      margin-top:60px;
-      width:100%;
-      clear:both;
-    }
-    
-    .footer-container{
-      max-width:1200px;
-      margin:0 auto;
-      padding:0 20px;
-    }
-    
-    .footer-content{
-      display:grid;
-      grid-template-columns:2fr 1fr 1fr;
-      gap:40px;
-      margin-bottom:30px;
-    }
-    
-    .footer-section h3{
-      color:var(--accent-light);
-      font-size:20px;
-      font-weight:700;
-      margin:0 0 16px 0;
-    }
-    
-    .footer-section h4{
-      color:var(--text);
-      font-size:16px;
-      font-weight:600;
-      margin:0 0 12px 0;
-    }
-    
-    .footer-section p{
-      color:var(--text-dim);
-      font-size:14px;
-      line-height:1.6;
-      margin:0;
-    }
-    
-    .footer-section ul{
-      list-style:none;
-      padding:0;
-      margin:0;
-    }
-    
-    .footer-section ul li{
-      margin:8px 0;
-    }
-    
-    .footer-section ul li a{
-      color:var(--text-dim);
-      text-decoration:none;
-      font-size:14px;
-      transition:color 0.3s ease;
-    }
-    
-    .footer-section ul li a:hover{
-      color:var(--accent-light);
-    }
-    
-    .footer-bottom{
-      border-top:1px solid rgba(255,255,255,0.1);
-      padding-top:20px;
-      text-align:center;
-    }
-    
-    .footer-bottom p{
-      color:var(--muted);
-      font-size:13px;
-      margin:0;
-    }
-    
-    [data-theme="light"] .site-footer{
-      background:linear-gradient(135deg, rgba(248,250,252,0.95), rgba(241,245,249,0.98));
-      border-top:1px solid rgba(0,0,0,0.1);
-    }
-    
-    [data-theme="light"] .footer-bottom{
-      border-top:1px solid rgba(0,0,0,0.1);
+      .hero h1{font-size:28px}
+      .theme-toggle{font-size:12px;padding:6px}
     }
   </style>
 </head>
 <body>
-  <!-- Fixed Navigation Bar -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
-        <div class="nav-logo-button">NoSpyLinks</div>
+        <div class="nav-logo-button" style="padding: 4px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: white; border: 1px solid rgba(255,255,255,0.3);">
+          <img src="NoSpy.png" alt="NoSpyLinks" style="height: 32px; width: auto; object-fit: contain;" />
+        </div>
       </a>
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="contact.html" class="active">Contact</a>
-        <button class="theme-toggle" id="themeToggle">
+        <button id="themeToggle" class="theme-toggle">
           <span id="themeIcon">🌙</span>
-          <span id="themeText">Dark</span>
+          <span id="themeText">Light</span>
         </button>
       </div>
     </div>
   </nav>
 
-  <div class="container">
+  <div class="content">
     <div class="hero">
-      <h1>Get in Touch</h1>
-      <p>Have questions, suggestions, or need help? We'd love to hear from you!</p>
+      <h1>Contact NoSpyLinks</h1>
+      <p>Get in touch with our team for support, feature requests, privacy questions, or any other inquiries. We're here to help!</p>
     </div>
 
-    <div class="content">
+    <div class="contact-methods">
       <h2>📧 Contact Methods</h2>
-      <div class="contact-grid">
-        <div class="contact-method">
-          <h4>� General Contact</h4>
-          <p>Questions, support, bug reports, feature requests, partnerships, or any other inquiries</p>
-          <a href="mailto:support@nospylinks.com?subject=NoSpyLinks Inquiry">support@nospylinks.com</a>
-        </div>
-        <div class="contact-method">
-          <h4>� Quick Response</h4>
-          <p>We typically respond within 24 hours during business days</p>
-          <a href="mailto:support@nospylinks.com?subject=Urgent - NoSpyLinks">support@nospylinks.com</a>
-        </div>
-        <div class="contact-method">
-          <h4>🔒 Privacy Focused</h4>
-          <p>Your communications are private and never shared with third parties</p>
-          <a href="mailto:support@nospylinks.com?subject=Privacy Question">support@nospylinks.com</a>
-        </div>
-        <div class="contact-method">
-          <h4>🌟 Feedback Welcome</h4>
-          <p>Love NoSpyLinks? Have suggestions? We'd love to hear from you!</p>
-          <a href="mailto:support@nospylinks.com?subject=Feedback - NoSpyLinks">support@nospylinks.com</a>
-        </div>
+      
+      <div class="contact-method">
+        <h4>📧 General Contact</h4>
+        <p>Questions, support, bug reports, feature requests, partnerships, or any other inquiries</p>
+        <a href="mailto:support@nospylinks.com?subject=NoSpyLinks Inquiry">support@nospylinks.com</a>
+      </div>
+      
+      <div class="contact-method">
+        <h4>💬 Quick Response</h4>
+        <p>We typically respond within 24 hours during business days</p>
+        <a href="mailto:support@nospylinks.com?subject=Urgent - NoSpyLinks">support@nospylinks.com</a>
+      </div>
+      
+      <div class="contact-method">
+        <h4>🐛 Bug Reports</h4>
+        <p>Found a bug or issue? Let us know so we can fix it quickly</p>
+        <a href="mailto:support@nospylinks.com?subject=Bug Report - NoSpyLinks">support@nospylinks.com</a>
+      </div>
+      
+      <div class="contact-method">
+        <h4>💡 Feature Requests</h4>
+        <p>Have an idea for a new feature or improvement?</p>
+        <a href="mailto:support@nospylinks.com?subject=Feature Request - NoSpyLinks">support@nospylinks.com</a>
       </div>
     </div>
 
-    <div class="content">
-      <h2>✉️ Send Us a Message</h2>
-      <p>Use the form below to send us a message directly. We'll get back to you as soon as possible!</p>
-      
-      <form id="contactForm" action="mailto:support@nospylinks.com" method="post" enctype="text/plain">
+    <div class="contact-form">
+      <h3>Send us a Message</h3>
+      <form action="mailto:support@nospylinks.com" method="get" enctype="text/plain">
         <div class="form-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="name" required>
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" placeholder="Brief description of your inquiry" required>
         </div>
         
         <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" required>
+          <label for="body">Message:</label>
+          <textarea id="body" name="body" placeholder="Please provide as much detail as possible..." required></textarea>
         </div>
         
-        <div class="form-group">
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Tell us how we can help you..." required></textarea>
-        </div>
-        
-        <button type="submit" class="btn" id="submitBtn">Send Message</button>
-        
-        <div class="success-message" id="successMessage">
-          <strong>Thank you!</strong> Your message has been sent successfully. We'll get back to you soon.
-        </div>
+        <button type="submit" class="btn">Send Email</button>
       </form>
     </div>
 
-    <div class="content">
-      <h2>🚀 Quick Help</h2>
-      
-      <h3>Frequently Asked Questions</h3>
-      
-      <h4>Q: Is NoSpyLinks really private?</h4>
-      <p>Yes! All processing happens locally in your browser. No data is sent to our servers or any third parties. You can even use NoSpyLinks offline once the page is loaded.</p>
-      
-      <h4>Q: What tracking parameters does NoSpyLinks remove?</h4>
-      <p>We remove 15+ common tracking parameters including UTM parameters, Google Click IDs, Facebook tracking, email platform trackers, and social media tracking codes.</p>
-      
-      <h4>Q: Can I use NoSpyLinks on mobile devices?</h4>
-      <p>Absolutely! NoSpyLinks is fully responsive and works great on smartphones, tablets, and desktop computers.</p>
-      
-      <h4>Q: Is there a browser extension available?</h4>
-      <p>Currently, NoSpyLinks is available as a web application. We're considering a browser extension for the future based on user feedback.</p>
-      
-      <h4>Q: How often is the tracking parameter list updated?</h4>
-      <p>We regularly monitor new tracking methods and update our parameter list to stay current with the latest tracking techniques.</p>
-
-      <h3>🔧 Technical Support</h3>
-      <p>If you're experiencing technical issues:</p>
-      <ul>
-        <li>Try refreshing the page and clearing your browser cache</li>
-        <li>Ensure JavaScript is enabled in your browser</li>
-        <li>Check that you're using a modern browser (Chrome, Firefox, Safari, Edge)</li>
-        <li>If problems persist, contact us with your browser version and error details</li>
-      </ul>
+    <div class="cta">
+      <h3>Ready to Clean Your Links?</h3>
+      <p>Start protecting your privacy today with NoSpyLinks's simple, effective URL cleaning tool.</p>
+      <a href="index.html" class="btn">Try NoSpyLinks Now</a>
     </div>
+  </div>
 
-    <div class="content">
-      <h2>🌟 Join Our Community</h2>
-      <p>Stay updated with NoSpyLinks developments and connect with other privacy-conscious users:</p>
-      
-      <div class="contact-grid">
-        <div class="contact-method">
-          <h4>📱 Social Media</h4>
-          <p>Follow us for updates and privacy tips</p>
-          <a href="#">@NoSpyLinks</a>
-        </div>
-        <div class="contact-method">
-          <h4>📰 Newsletter</h4>
-          <p>Get notified about new features and updates</p>
-          <a href="mailto:support@nospylinks.com?subject=Newsletter Signup">Subscribe</a>
-        </div>
-        <div class="contact-method">
-          <h4>💻 Open Source</h4>
-          <p>Contribute to NoSpyLinks development</p>
-          <a href="#">GitHub Repository</a>
-        </div>
-        <div class="contact-method">
-          <h4>🎯 Privacy Blog</h4>
-          <p>Learn about online privacy and security</p>
-          <a href="#">Read Our Blog</a>
-        </div>
-      </div>
-    </div>
+  <div class="footer">
+    <p>© 2025 NoSpyLinks. All rights reserved. | Made with privacy in mind.</p>
   </div>
 
 <script>
@@ -687,81 +465,14 @@
   });
 
   function updateThemeButton(theme) {
-    if (theme === 'light') {
-      themeIcon.textContent = '☀️';
+    if (theme === 'dark') {
+      themeIcon.textContent = '🌙';
       themeText.textContent = 'Light';
     } else {
-      themeIcon.textContent = '🌙';
+      themeIcon.textContent = '☀️';
       themeText.textContent = 'Dark';
     }
   }
-
-  // Contact Form
-  const contactForm = document.getElementById('contactForm');
-  const submitBtn = document.getElementById('submitBtn');
-  const successMessage = document.getElementById('successMessage');
-
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form data
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-    
-    // Create mailto URL with form data
-    const mailtoUrl = `mailto:support@nospylinks.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-    
-    // Open email client
-    window.location.href = mailtoUrl;
-    
-    // Show success message
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Opening Email Client...';
-    
-    setTimeout(() => {
-      contactForm.reset();
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Send Message';
-      successMessage.style.display = 'block';
-      
-      // Hide success message after 5 seconds
-      setTimeout(() => {
-        successMessage.style.display = 'none';
-      }, 5000);
-    }, 1500);
-  });
 </script>
-
-<!-- Footer -->
-<footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>NoSpyLinks</h3>
-        <p>Privacy-focused URL cleaning tool. Remove tracking parameters and protect your privacy online.</p>
-      </div>
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="privacy-policy.html">Privacy Policy</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 NoSpyLinks. All rights reserved. | Made with privacy in mind.</p>
-    </div>
-  </div>
-</footer>
-
 </body>
 </html>
